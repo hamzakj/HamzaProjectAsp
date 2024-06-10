@@ -1,0 +1,83 @@
+﻿@page
+@model HamzaProject.Pages.StudentsModel
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Students List</h1>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h5 class="my-0">Add a Student</h5>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="StudentName">Name</label>
+                        <input type="text" id="StudentName" name="StudentName" class="form-control" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="StudentNumber">Number</label>
+                        <input type="text" id="StudentNumber" name="StudentNumber" class="form-control" required />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3" formaction="/Students?handler=AddStudent">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <h2 class="mb-4">Students</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model.Students)
+                {
+                    <tr>
+                        <td>@student.Id</td>
+                        <td>@student.Name</td>
+                        <td>@student.Number</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .table-responsive {
+            margin-top: 20px;
+        }
+
+        .card-header h5 {
+            margin: 0;
+        }
+
+        .custom-dropdown {
+            margin-top: 1rem;
+        }
+
+        .custom-dropdown-btn {
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-menu {
+            width: 100%;
+        }
+    </style>
+}

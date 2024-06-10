@@ -1,0 +1,60 @@
+﻿@page
+@model HamzaProject.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to the HamzaProject</h1>
+        <p class="lead">Our goal is to streamline the process of managing books, students, and borrowing activities in a library. Our system offers a user-friendly interface for adding, viewing, and managing all related data efficiently.</p>
+        <hr class="my-4">
+        <p>Explore the different sections of our website to get started:</p>
+        <a class="btn btn-primary btn-lg" href="/Books" role="button">Manage Books</a>
+        <a class="btn btn-secondary btn-lg" href="/Students" role="button">Manage Students</a>
+        <a class="btn btn-success btn-lg" href="/Borrow" role="button">Borrow Books</a>
+    </div>
+
+    <h2 class="mb-4">Website Goals</h2>
+    <ul class="list-unstyled">
+        <li class="media my-4">
+            <i class="fas fa-book mr-3 fa-2x"></i>
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">Efficient Book Management</h5>
+                Our system allows you to easily add, edit, and view books in the library, ensuring an up-to-date catalog.
+            </div>
+        </li>
+        <li class="media my-4">
+            <i class="fas fa-user-graduate mr-3 fa-2x"></i>
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">Comprehensive Student Records</h5>
+                Keep track of all student information and their borrowing history, making it easy to manage library memberships.
+            </div>
+        </li>
+        <li class="media my-4">
+            <i class="fas fa-exchange-alt mr-3 fa-2x"></i>
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">Streamlined Borrowing Process</h5>
+                Our intuitive borrowing system allows students to borrow books with ease, and administrators can track and manage borrowings efficiently.
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+@section Scripts {
+    <style>
+        .jumbotron {
+            background-color: #f8f9fa;
+            padding: 2rem 1rem;
+        }
+
+        .media img {
+            border-radius: 50%;
+        }
+
+        .btn-lg {
+            margin: 0.5rem;
+        }
+    </style>
+}

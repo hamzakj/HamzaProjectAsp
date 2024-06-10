@@ -1,0 +1,77 @@
+﻿@page
+@model HamzaProject.Pages.BooksModel
+@{
+    ViewData["Title"] = "Books";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Books List</h1>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h5 class="my-0">Add a Book</h5>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="BookName">Name</label>
+                        <input type="text" id="BookName" name="BookName" class="form-control" required />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3" formaction="/Books?handler=AddBook">Add Book</button>
+            </form>
+        </div>
+    </div>
+
+    <h2 class="mb-4">Books</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model.Books)
+                {
+                    <tr>
+                        <td>@book.Id</td>
+                        <td>@book.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .table-responsive {
+            margin-top: 20px;
+        }
+
+        .card-header h5 {
+            margin: 0;
+        }
+
+        .custom-dropdown {
+            margin-top: 1rem;
+        }
+
+        .custom-dropdown-btn {
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-menu {
+            width: 100%;
+        }
+    </style>
+}
